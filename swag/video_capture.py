@@ -89,3 +89,6 @@ class VideoCapture(object):
             self._cap.set(cv2.CAP_PROP_POS_FRAMES, self._dec_frame_ind)
         else:
             raise NotImplementedError
+
+    def release(self):
+        pass
