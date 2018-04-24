@@ -90,5 +90,13 @@ class VideoCapture(object):
         else:
             raise NotImplementedError
 
+    def get(self, prop_id):
+        if prop_id == cv2.CAP_PROP_POS_FRAMES:
+            return self.cum_frames[-1]
+        elif prop_id == cv2.CAP_PROP_FPS:
+            return self._cap.get(prop_id)
+        else:
+            raise NotImplementedError
+
     def release(self):
         pass
